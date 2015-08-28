@@ -10,4 +10,8 @@ defmodule TfidfTest do
   test "#calculate()" do
     assert Tfidf.calculate("apple", "apple banana", ["apple pie", "apple poop"]) == 1
   end
+
+  test "#tokenize()" do
+    assert Tfidf.tokenize("Doctor Who") == ["doctor", "who"]
+  end
 end

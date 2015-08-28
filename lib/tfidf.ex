@@ -18,7 +18,12 @@ defmodule Tfidf do
     end)
   end
 
-  def tokenize(text), do: String.split(text, " ")
+  @doc """
+  Splits a string into a tokenized list.
+
+  ## Tfidf.tokenize("Doctor Who") == ["doctor", "who"]
+  """
+  def tokenize(text), do: String.downcase(text) |> String.split(" ")
 
   defp tf(word, text) do
     word_count(word, text) / length(text)
