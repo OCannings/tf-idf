@@ -3,12 +3,16 @@ defmodule Tfidf.Mixfile do
 
   def project do
     [app: :tfidf,
-     version: "0.1.1",
+     version: "0.1.2",
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     contributors: ["OCannings"],
-     licenses: ["Unlicense"],
+     description: description,
+     package: [
+       contributors: ["OCannings"],
+       licenses: ["Unlicense"],
+       links: %{Github: "https://github.com/OCannings/tf-idf"}
+     ],
      deps: deps]
   end
 
@@ -17,6 +21,12 @@ defmodule Tfidf.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [applications: [:logger]]
+  end
+
+  def description do
+    """
+      Elixir implementation of tf-idf (Term frequency-inverse document frequency)
+    """
   end
 
   # Dependencies can be Hex packages:
