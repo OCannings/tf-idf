@@ -66,9 +66,9 @@ defmodule TfidfTest do
   test "calculate_all/3", context do
     scores = Tfidf.calculate_all(context[:text], context[:corpus])
 
-    films_score = Enum.find(scores, fn(x) -> x[:word] == "films" end)[:score]
-    film_score = Enum.find(scores, fn(x) -> x[:word] == "film" end)[:score]
-    california_score = Enum.find(scores, fn(x) -> x[:word] == "California" end)[:score]
+    {_, films_score} = Enum.find(scores, fn({word, _}) -> word == "films" end)
+    {_, film_score} = Enum.find(scores, fn({word, _}) -> word == "film" end)
+    {_, california_score} = Enum.find(scores, fn({word, _}) -> word == "California" end)
 
     assert films_score == Tfidf.calculate("films", context[:text], context[:corpus])
     assert film_score == Tfidf.calculate("film", context[:text], context[:corpus])

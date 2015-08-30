@@ -12,7 +12,7 @@ defmodule Tfidf do
 
   def calculate_all(text, corpus, tokenize_fn \\ &tokenize(&1)) do
     Enum.map(tokenize_fn.(text) |> Enum.uniq, fn(word) ->
-      %{:score => calculate(word, text, corpus, tokenize_fn), :word => word}
+      {word, calculate(word, text, corpus, tokenize_fn)}
     end)
   end
 
