@@ -1,19 +1,16 @@
 ![Travis CI Build Status](https://travis-ci.org/OCannings/tf-idf.svg?branch=master)
 
 #Tfidf
-=====
 An Elixir implementation of tf-idf
 
 [Based on the blog post by Steven Loria](http://stevenloria.com/finding-important-words-in-a-document-using-tf-idf/)
 
 ##What is tf-idf?
-=====
 > tf–idf, short for term frequency–inverse document frequency, is a numerical statistic that is intended to reflect how important a word is to a document in a collection or corpus. It is often used as a weighting factor in information retrieval and text mining.
 
 [tf-idf on Wikipedia](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
 
 ## Installation
-=====
 ```elixir
 defp deps do
   [{:tfidf, "~> 0.1.0"}]
@@ -21,7 +18,6 @@ end
 ```
 
 ## Usage
-=====
 
 ### Tfidf.calculate(word, text, corpus, tokenize_fn \\\ &tokenize(&1))
  Calculates the tf-idf for a given word within a text and a corpus (List) of
